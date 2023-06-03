@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"goBootcamp/doctor"
 	"os"
+	"strings"
 )
 
 func main() {
@@ -17,6 +18,9 @@ func main() {
 	for {
 		userInput, _ := reader.ReadString('\n')
 		
+		userInput = strings.Replace(userInput, "\r\n", "", -1)
+		userInput = strings.Replace(userInput, "\n", "", -1)
+
 		if userInput == "quit" {
 			break
 		} else {
