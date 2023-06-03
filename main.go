@@ -17,8 +17,11 @@ func main() {
 	for {
 		userInput, _ := reader.ReadString('\n')
 		
-		response := doctor.Response(userInput)
-
-		fmt.Println(response)
+		if userInput == "quit" {
+			break
+		} else {
+			response := doctor.Response(userInput)
+			fmt.Println(response)
+		}
 	}
 }
